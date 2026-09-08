@@ -2,6 +2,8 @@
 
 ShopSphere is a full-stack e-commerce web application built using the MERN stack. It provides a complete shopping experience for customers along with an administrative dashboard for managing products, categories, orders, and users.
 
+https://e-commerce-taupe-eta.vercel.app/
+
 ## 🚀 Features
 
 ### 👤 User Features
