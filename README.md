@@ -1,110 +1,95 @@
 # 🛒 ShopSphere
 
-ShopSphere is a full-stack e-commerce web application built using the MERN stack. It provides a complete shopping experience for customers along with an administrative dashboard for managing products, categories, orders, and users.
+A full-stack MERN e-commerce platform with JWT authentication, role-based access control, product management, cart and orders, Razorpay payments, Cloudinary image uploads, reviews, and an admin dashboard.
 
-https://e-commerce-taupe-eta.vercel.app/
+🔗 **Live Demo:** https://e-commerce-taupe-eta.vercel.app/
 
-## 🚀 Features
+---
 
-### 👤 User Features
+## ✨ Features
+
+### 👤 Customer Features
 
 - User registration and login
 - JWT-based authentication
-- Product browsing
+- Browse products
 - Product search
 - Category filtering
 - Price sorting
 - Product details
+- Product reviews and ratings
 - Shopping cart
-- Quantity management
-- Address management
-- Checkout
-- Order placement
+- Cart quantity management
+- Multiple address management
+- Checkout and order placement
 - Order history
 - Order details
 - Order cancellation
-- Product reviews and ratings
 - User profile management
 
-### 🛠️ Admin Features
+### 🛡️ Admin Features
 
-- Admin authentication
+- Admin authentication and authorization
 - Admin dashboard
-- Product management
-- Add, update and delete products
+- Product CRUD operations
 - Category management
-- Order management
-- Update order status
-- View customer orders
-- Inventory/stock management
+- Inventory and stock management
+- Customer order management
+- Order status updates
 
-### 💳 Payment
+### 💳 Payment Features
 
 - Razorpay payment integration
-- Payment verification
+- Razorpay order creation
+- Payment signature verification
 - Payment status tracking
-- Razorpay webhook support
-- Refund handling
+- Razorpay webhook handling
+- Refund initiation
 
 ### ☁️ Image Management
 
-- Product image uploads using Cloudinary
-- Image management when products are updated or deleted
+- Cloudinary-based product image uploads
+- Image replacement when products are updated
+- Image deletion when products are removed
 
 ---
 
 ## 🏗️ Tech Stack
 
-### Frontend
-
-- React
-- Vite
-- React Router
-- Axios
-- CSS
-
-### Backend
-
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT Authentication
-- Express Validator
-- Helmet
-- Morgan
-- CORS
-
-### Services
-
-- MongoDB Atlas
-- Cloudinary
-- Razorpay
+| Layer | Technologies |
+|---|---|
+| Frontend | React, Vite, React Router, Axios, CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB, Mongoose |
+| Authentication | JWT |
+| Validation | Express Validator |
+| Security | Helmet, CORS, Rate Limiting |
+| Payments | Razorpay |
+| Image Storage | Cloudinary |
+| Deployment | Vercel, MongoDB Atlas |
 
 ---
 
-## 📁 Project Structure
+## 📐 System Architecture
 
 ```text
-ShopSphere/
-│
-├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── validators/
-│   ├── server.js
-│   ├── package.json
-│   └── .env
-│
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── .env
-│
-└── README.md
-
-ShopSphere is a full-stack MERN e-commerce platform that allows users to browse and search products, manage carts and addresses, place and track orders, make secure online payments through Razorpay, and leave product reviews. It also includes an admin dashboard for managing products, categories, inventory, and orders.
+                    ┌──────────────────┐
+                    │    React + Vite  │
+                    │    Frontend      │
+                    └────────┬─────────┘
+                             │
+                         REST API
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │  Express.js API  │
+                    │     Backend      │
+                    └───────┬──────────┘
+                            │
+              ┌─────────────┼─────────────┐
+              │             │             │
+              ▼             ▼             ▼
+        ┌──────────┐  ┌──────────┐  ┌──────────┐
+        │ MongoDB  │  │ Razorpay │  │Cloudinary│
+        │ Database │  │ Payments │  │  Images  │
+        └──────────┘  └──────────┘  └──────────┘
